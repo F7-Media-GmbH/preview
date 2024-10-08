@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext"
+          original="EXT:ext_preview/Resources/Private/Language/locallang_be.xlf" date="2022-09-20T13:56:05Z"
+          product-name="ext_preview">
+        <header/>
+        <body>
+            <trans-unit id="show.title" resname="show.title">
+                <source>Preview</source>
+            </trans-unit>
+            <trans-unit id="show.description" resname="show.description">
+                <source>This page is accessible under the following preview links also for external visitors without a password.</source>
+            </trans-unit>
+			<trans-unit id="show.description_nolinks" resname="show.description_nolinks">
+				<source>Generate preview links (one per language) if you want the page to be accessible for external visitors without a password .</source>
+			</trans-unit>
+            <trans-unit id="show.copy" resname="show.copy">
+                <source>Copy</source>
+
+			</trans-unit>
+            <trans-unit id="show.delete" resname="show.delete">
+                <source>Delete</source>
+            </trans-unit>
+            <trans-unit id="show.button.generate" resname="show.button.generate">
+                <source>Generate preview link</source>
+            </trans-unit>
+			<trans-unit id="settings.lifetime" resname="settings.lifetime">
+			  <source>Lifetime</source>
+			</trans-unit>
+			<trans-unit id="settings.lifetime.description" resname="settings.lifetime.description">
+				<source>Duration in days in which a preview link is valid. After this period, the link is automatically deleted.</source>
+			</trans-unit>
+        </body>
+    </file>
+</xliff>

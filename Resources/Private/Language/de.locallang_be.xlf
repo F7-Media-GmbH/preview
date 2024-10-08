@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" target-language="de" datatype="plaintext"
+          original="EXT:ext_preview/Resources/Private/Language/locallang_be.xlf" date="2022-09-20T13:56:05Z"
+          product-name="ext_preview">
+        <header/>
+        <body>
+            <trans-unit id="show.title" resname="show.title">
+                <target>Vorschau</target>
+            </trans-unit>
+            <trans-unit id="show.description" resname="show.description">
+                <target>Unter dem folgenden Link ist die Seite als Vorschau für externe Besucher ohne Passwort zu erreichen.</target>
+            </trans-unit>
+            <trans-unit id="show.copy" resname="show.copy">
+                <target>Kopieren</target>
+            </trans-unit>
+            <trans-unit id="show.delete" resname="show.delete">
+                <target>Löschen</target>
+            </trans-unit>
+            <trans-unit id="show.button.generate" resname="show.button.generate">
+                <target>Vorschau-Link generieren</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

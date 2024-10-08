@@ -1,0 +1,26 @@
+.preview-language {
+    margin-bottom: 1.2em;
+    height: 2.5em;
+    display: flex;
+    align-items: center;
+}
+
+.preview-language--label {
+    padding-left: 10px;
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+.preview-language--link {
+    width: 60%;
+    max-width: 800px;
+    padding: 10px;
+    margin: 0 10px;
+    flex-grow: 0;
+}
+
+.preview-language--link input {
+    border-radius: 8px;
+    border: 0;
+    flex-grow: 1;
+}
