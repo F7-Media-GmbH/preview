@@ -29,7 +29,7 @@ class PreviewUserAuthentication extends BackendUserAuthentication
     public function __construct(SiteLanguage $siteLanguage)
     {
         parent::__construct();
-        // a uid > 0 is needed, but we want no walid uid!
+        // uid > 0 is needed, but we want no walid uid!
         $this->user['uid'] = 0.1;
         $this->name = PreviewUriBuilder::PARAMETER_NAME;
         $this->siteLanguage = $siteLanguage;
