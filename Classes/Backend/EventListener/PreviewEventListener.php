@@ -14,6 +14,7 @@ use TYPO3\CMS\Core\Database\Query\Restriction\WorkspaceRestriction;
 use TYPO3\CMS\Core\Site\SiteFinder;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Fluid\View\StandaloneView;
+use TYPO3\CMS\Core\Page\PageRenderer;
 
 final  class PreviewEventListener
 {
@@ -30,6 +31,10 @@ final  class PreviewEventListener
      * @var array
      */
     protected $languageProperties = [];
+
+    public function __construct(
+        private readonly PageRenderer $pageRenderer,
+    ) {}
 
     public function __invoke(ModifyPageLayoutContentEvent $event): void
     {
@@ -99,11 +104,10 @@ final  class PreviewEventListener
             }
         }
 
+        $this->pageRenderer->loadJavaScriptModule('@f7media/preview/Preview.js');
+
         $view = GeneralUtility::makeInstance(StandaloneView::class);
         $view->setTemplateRootPaths(['EXT:preview/Resources/Private/Templates/Backend']);
-
-       //  $publicResourcesPath = \CMS\Core\Utility\PathUtility::getAbsoluteWebPath(CMS\Core\Utility\ExtensionManagementUtility::extPath('preview')) . 'Resources/Public/';
-       //  $this->pageRenderer->addCssFile($publicResourcesPath . 'Stylesheet/preview.css');
 
         $view->setTemplate('Show');
         $view->assignMultiple([
