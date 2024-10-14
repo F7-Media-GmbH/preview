@@ -11,15 +11,30 @@
             <trans-unit id="show.description" resname="show.description">
                 <target>Unter dem folgenden Link ist die Seite als Vorschau für externe Besucher ohne Passwort zu erreichen.</target>
             </trans-unit>
-            <trans-unit id="show.copy" resname="show.copy">
+            <trans-unit id="show.description_nolinks" resname="show.description_nolinks">
+				<target>Erzeugen Sie Vorschaulinks (einen pro Sprache), wenn Sie möchten, dass die Seite für externe Besucher ohne Passwort zugänglich ist.</target>
+			</trans-unit>
+            <trans-unit id="show.button.copy" resname="show.button.copy">
                 <target>Kopieren</target>
             </trans-unit>
-            <trans-unit id="show.delete" resname="show.delete">
+            <trans-unit id="show.button.delete" resname="show.button.delete">
                 <target>Löschen</target>
             </trans-unit>
             <trans-unit id="show.button.generate" resname="show.button.generate">
                 <target>Vorschau-Link generieren</target>
             </trans-unit>
+            <trans-unit id="settings.lifetime" resname="settings.lifetime">
+			    <target>Lebensdauer</target>
+			</trans-unit>
+			<trans-unit id="settings.lifetime.description" resname="settings.lifetime.description">
+				<target>Dauer in Tagen, in der dieser Vorschaulink gültig ist. Nach Ablauf dieser Frist wird der Link automatisch gelöscht.</target>
+			</trans-unit>
+            <trans-unit id="show.notification.title" resname="show.notification.title">
+			    <target>Link kopiert!</target>
+			</trans-unit>
+			<trans-unit id="show.notification.description" resname="show.notification.description">
+				<target>Der Vorschaulink ist nun in der Zwischenablage verfügbar.</target>
+			</trans-unit>
         </body>
     </file>
 </xliff>

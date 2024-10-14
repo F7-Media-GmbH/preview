@@ -1,147 +1,68 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
 
-
-<script type="text/javascript" nonce="<f:security.nonce />">
-    document.addEventListener('DOMContentLoaded', function () {
-        class CopyToClipboard {
-            constructor(element) {
-                this.element = element;
-                this.type = this.element.getAttribute('data-copy');
-
-                // Component CSS Classes
-                this.classes = {
-                    copied: 'copy-to-clipboard--copied',
-                };
-
-                this.bindAction();
-            }
-
-            /**
-             * Copy content to clipboard based on element type
-             */
-            bindAction() {
-                this.element.addEventListener('click', (element) => {
-                    console.log(element);
-                    let copyText = document.querySelector('.preview-language--link.' + element.dataset.language + ' > input');
-                    copyText.select();
-                    copyText.setSelectionRange(0, 99999); // For mobile devices
-                    navigator.clipboard.writeText(copyText.value);
-
-
-                    this.element.classList.add(this.classes.copied);
-
-                    setTimeout(() => {
-                        this.element.classList.remove(this.classes.copied);
-                    }, 2000);
-                });
-            }
-
-            /**
-             * Gets current url
-             * @returns {string} - current url
-             */
-            getCurrentUrl() {
-                return window.location.href;
-            }
-
-            /**
-             * Gets target elments inner html content
-             * @returns {string} - target element content
-             */
-            getTargetContent() {
-                const id = this.element.getAttribute('data-copy-id');
-                return document.getElementById(id).innerHTML;
-            }
-        }
-
-        const elements = {
-            copyToClipboard: document.querySelectorAll('.copy-to-clipboard'),
-        }
-
-        elements.copyToClipboard.forEach((element) => new CopyToClipboard(element));
-    });
-
-
-
-
-
-</script>
-
-<div class="ext_preview callout callout-secondary">
-    <div class="media">
-        <div class="media-left">
-			<span class="fa-stack fa-lg callout-icon">
-				<i class="fa fa-circle fa-stack-2x"></i>
-				<i class="fa fa-info fa-stack-1x"></i>
-			</span>
-        </div>
-        <div class="media-body">
-            <h4 class="callout-title">
-                <f:translate key="LLL:EXT:preview/Resources/Private/Language/locallang_be.xlf:show.title"/>
-            </h4>
-            <div class="callout-body">
-                <f:variable name="linkAvailable">false</f:variable>
-                <f:for each="{languages}" as="language">
-                    <f:if condition="{language.previewLink}">
-                        <f:variable name="linkAvailable">true</f:variable>
-                    </f:if>
-                </f:for>
-                <p>
-                <f:if condition="{linkAvailable}">
-                    <f:then>
-                        <f:translate key="LLL:EXT:preview/Resources/Private/Language/locallang_be.xlf:show.description"/>
-                    </f:then>
-                    <f:else>
-                        <f:translate key="LLL:EXT:preview/Resources/Private/Language/locallang_be.xlf:show.description_nolinks"/>
-                    </f:else>
+<div class="ext_preview callout callout-notice">
+    <div>
+        <h4 class="callout-title">
+            <f:translate key="LLL:EXT:preview/Resources/Private/Language/locallang_be.xlf:show.title"/>
+        </h4>
+        <div class="callout-body">
+            <f:variable name="linkAvailable">false</f:variable>
+            <f:for each="{languages}" as="language">
+                <f:if condition="{language.previewLink}">
+                    <f:variable name="linkAvailable">true</f:variable>
                 </f:if>
-                </p>
-                <p>
-
-                </p>
-                <div class="preview-languages">
-                    <f:for each="{languages}" as="language">
+            </f:for>
+            <f:if condition="{linkAvailable}">
+                <f:then>
+                    <p><f:translate key="LLL:EXT:preview/Resources/Private/Language/locallang_be.xlf:show.description"/></p>
+                </f:then>
+                <f:else>
+                    <p><f:translate key="LLL:EXT:preview/Resources/Private/Language/locallang_be.xlf:show.description_nolinks"/></p>
+                </f:else>
+            </f:if>
+            <div class="ext_preview__languages">
+                <f:for each="{languages}" as="language">
+                    <div class="ext_preview__language">
                         <f:if condition="{language.previewLink}">
                             <f:then>
-                                <div class="preview-language">
-                                    <div class="preview-language--label">
-                                        <span class="preview-language--flag"><core:icon
-                                                identifier="{language.flagIdentifier}"/></span>
-                                        <span class="preview-language--language">{language.title}</span>
-                                    </div>
-                                    <span class="preview-language--link {language.flagIdentifier}">
-										<input value="{language.url}" class="form-control" size="30">
-									</span>
-                                    <span class="preview-language--copy btn btn-primary btn-sm copy-to-clipboard"
-                                          data-language="{language.flagIdentifier}">
-										<f:translate
-                                                key="LLL:EXT:preview/Resources/Private/Language/locallang_be.xlf:show.copy"/>
-									</span>&nbsp;
-                                    <span class="preview-language--action">
-									<a class="btn btn-danger btn-sm" id="removeLink" href="{language.action}"><f:translate
-                                        key="LLL:EXT:preview/Resources/Private/Language/locallang_be.xlf:show.delete"/></a>
-								    </span>
+                                <div class="ext_preview__language-title">
+                                    <span class="ext_preview__language-title-flag"><core:icon identifier="{language.flagIdentifier}"/></span>
+                                    <span class="ext_preview__language-title-language">{language.title}</span>
                                 </div>
-
+                                <div class="ext_preview__input">
+                                    <input value="{language.url}" class="form-control form-control-sm" size="30" id="input_{language.flagIdentifier}">
+                                </div>
+                                <div class="ext_preview__actions">
+                                    <span class="btn btn-default btn-sm ext_preview__trigger" data-language="{language.flagIdentifier}">
+                                        <core:icon identifier="actions-clipboard"/>
+                                        <f:translate key="LLL:EXT:preview/Resources/Private/Language/locallang_be.xlf:show.button.copy"/>
+                                    </span>
+                                    <a class="btn btn-default btn-sm" id="removeLink" href="{language.action}">
+                                        <core:icon identifier="actions-delete"/>
+                                        <f:translate key="LLL:EXT:preview/Resources/Private/Language/locallang_be.xlf:show.button.delete"/>
+                                    </a>
+                                </div>
                             </f:then>
                             <f:else>
-                                <div class="preview-language">
-                                    <div class="preview-language--label">
-                                        <span class="preview-language--flag"><core:icon
-                                            identifier="{language.flagIdentifier}"/></span>
-                                        <span class="preview-language--language">{language.title}</span>
-                                    </div>&nbsp;
-                                    <span class="preview-language--action">
-                                        <a class="btn btn-info btn-sm" id="addLink" href="{language.action}"><f:translate
-                                                key="LLL:EXT:preview/Resources/Private/Language/locallang_be.xlf:show.button.generate"/></a><br/>
-                                    </span>
+                                <div class="ext_preview__language-title">
+                                    <span class="ext_preview__language-title-flag"><core:icon identifier="{language.flagIdentifier}"/></span>
+                                    <span class="ext_preview__language-title-language">{language.title}</span>
                                 </div>
-
+                                <div class="ext_preview__actions">
+                                    <a class="btn btn-default btn-sm" id="addLink" href="{language.action}">
+                                        <core:icon identifier="actions-refresh"/>
+                                        <f:translate key="LLL:EXT:preview/Resources/Private/Language/locallang_be.xlf:show.button.generate"/>
+                                    </a>
+                                </div>
                             </f:else>
                         </f:if>
-                    </f:for>
-                </div>
+                    </div>
+                </f:for>
             </div>
         </div>
+    </div>
+    <div class="d-none">
+        <span id="ext_preview__notification-title"><f:translate key="LLL:EXT:preview/Resources/Private/Language/locallang_be.xlf:show.notification.title"/></span>
+        <span id="ext_preview__notification-body"><f:translate key="LLL:EXT:preview/Resources/Private/Language/locallang_be.xlf:show.notification.description"/></span>
     </div>
 </div>
