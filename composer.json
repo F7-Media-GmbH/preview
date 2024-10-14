@@ -4,7 +4,7 @@
 	"version": "1.0.0",
 	"description": "Generate URLs to preview hidden pages without a backend login",
 	"require": {
-		"php": "~8.2.0",
+		"php": "~8.2",
 		"typo3/cms-core": "^13.1",
 		"typo3/cms-fluid": "^13.1",
 		"typo3/cms-frontend": "^13.1",
