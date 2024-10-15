@@ -10,6 +10,9 @@
 		"typo3/cms-frontend": "^13.1",
 		"typo3/cms-backend": "^13.1"
 	},
+	"license": [
+		"GPL-3.0-or-later"
+	],
 	"require-dev": {
 		"bnf/phpstan-psr-container": "^1.0.1",
 		"ext-zip": "*",
