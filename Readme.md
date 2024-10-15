@@ -1,7 +1,7 @@
 # EXT: preview
 
+[![TYPO3 compatibility](https://img.shields.io/badge/TYPO3-13-ff8700?maxAge=3600&logo=typo3)](https://get.typo3.org/)
 [![pipeline status](https://hecate.f7.de/public_extensions/ext_preview/badges/main/pipeline.svg)](https://hecate.f7.de/public_extensions/ext_preview/-/commits/main)
-[![coverage report](https://hecate.f7.de/public_extensions/ext_preview/badges/main/coverage.svg)](https://hecate.f7.de/public_extensions/ext_preview/-/commits/main)
 
 preview is an extension for TYPO3. It adds the functionality to preview disabled pages
 through generated preview URLs without the need for a backend login.
