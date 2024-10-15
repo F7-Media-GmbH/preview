@@ -20,6 +20,7 @@ Preview
 
 :Author:
     Marc Willmann, David Nax | F7 Media GmbH
+
     Inspired from https://github.com/b13/authorized-preview
 
 :License:

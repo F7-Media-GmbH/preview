@@ -1,7 +1,7 @@
 {
 	"name": "f7media/preview",
 	"type": "typo3-cms-extension",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"description": "Generate URLs to preview hidden pages without a backend login",
 	"support": {
 		"source": "https://github.com/f7media/preview",

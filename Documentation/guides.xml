@@ -16,8 +16,6 @@
                interlink-shortcode="f7media/preview"
     />
     <project title="Preview"
-             release="main (development)"
-             version="main (development)"
              copyright="F7 Media GmbH"
     />
 </guides>
