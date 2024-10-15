@@ -3,6 +3,11 @@
 	"type": "typo3-cms-extension",
 	"version": "1.0.1",
 	"description": "Generate URLs to preview hidden pages without a backend login",
+	"support": {
+		"source": "https://github.com/f7media/preview",
+		"issues": "https://github.com/f7media/preview/issues",
+		"docs": "https://docs.typo3.org/p/f7media/preview/main/en-us/"
+	},
 	"require": {
 		"php": "~8.2",
 		"typo3/cms-core": "^13.1",

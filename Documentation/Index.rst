@@ -3,7 +3,7 @@
 .. _start:
 
 =========
-Cacheflow
+Preview
 =========
 
 :Extension key:
@@ -13,7 +13,7 @@ Cacheflow
     f7media/preview
 
 :Version:
-    1.0.0
+    1.0.1
 
 :Language:
     en
@@ -48,7 +48,6 @@ This is helpful, for example, to coordinate with external partners or similar be
     Introduction/Index
     Installation/Index
     Usage/Index
-    Considerations/Index
 
 ..  Meta Menu
 
