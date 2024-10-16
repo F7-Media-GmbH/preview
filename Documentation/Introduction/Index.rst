@@ -6,8 +6,8 @@
 Introduction
 ============
 
-This extension enables the provision of preview links for people who do not have a backend account. By using the preview link,
-hidden or not yet published pages can be viewed in advance in the frontend, e.g. to coordinate with external partners.
+This extension allows you to provide preview links to people who do not have a backend account. By using the preview link,
+hidden or not yet published pages in the frontend, e.g. to coordinate with external partners.
 
 Handle with care
 =======================
@@ -21,12 +21,12 @@ Motivation and Use case
 Pages are often prepared and coordinated with external partners, e.g. approvals for graphics or texts are obtained.
 These correction and coordination loops are greatly simplified by this extension.
 
-Editors can simply generate a preview link and pass it on to the external partner. After the configurable validity
-period (default 7 days), the preview link is automatically deleted again and thus loses its validity. Of course,
-the editor can also remove the preview link in advance if it is no longer required.
+Editors can simply generate a preview link and forward it to the external partner. After the configurable validity
+(default 7 days), the preview link is automatically deleted and loses its validity. Of course
+The editor can also remove the preview link in advance if it is no longer needed.
 
-In this way, access to pages that are deactivated or only published at a later date can easily be made available
-to a group of people who should not receive a TYPO3 backend account.
+In this way, you can easily provide access to pages that are deactivated or published at a later date.
+to a group of people who are not supposed to have a TYPO3 backend account.
 
 Features
 ========
