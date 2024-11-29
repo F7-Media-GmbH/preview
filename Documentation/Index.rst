@@ -19,9 +19,9 @@ Preview
     en
 
 :Author:
-    Marc Willmann, David Nax | F7 Media GmbH
+    Marc Willmann, David Nax | `F7 Media GmbH <https://f7.de>`__
 
-    Inspired from https://github.com/b13/authorized-preview
+    Inspired from b13/authorized-preview
 
 :License:
     This document is published under the
